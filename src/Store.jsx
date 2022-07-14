@@ -10,10 +10,8 @@ function Store() {
   )
 }
 
-let cart = []
-
 const Card = inventory.map((card) => 
-  <div className='card' key={card.id} id={card.item + '-' + card.id} >
+<div className='card' key={card.id} id={card.item + '-' + card.id} >
     <img className='card-img' style={{backgroundColor: card.color}}/>
     <p className='card-item'>{card.item}</p>
     <p className='card-price'>${card.price}</p>
@@ -22,8 +20,8 @@ const Card = inventory.map((card) =>
 )
 
 function addToCart(item){
-  cart.push(item)
-  document.getElementById('cart-item-number').textContent = cart.length
+  CartItems.push(item)
+  document.getElementById('cart-item-number').textContent = CartItems.length
 }
-
-export default Store;
+export const CartItems = []
+export default Store
